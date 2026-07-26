@@ -2,7 +2,6 @@ package com.habibi.produk.controller;
 
 import java.util.List;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,7 +22,7 @@ public class ProdukController {
     private ProdukService produkService;
 
     @GetMapping
-    public List<Produk> getAllProduks(){
+    public List<Produk> getAllProduks() {
         return produkService.getAllProduks();
     }
 
@@ -34,14 +33,19 @@ public class ProdukController {
     }
 
     @PostMapping
-    public Produk createProduk(@RequestBody Produk produk){
+    public Produk createProduk(@RequestBody Produk produk) {
         return produkService.createProduk(produk);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteProduk(@PathVariable Long id){
+    public ResponseEntity<?> deleteProduk(@PathVariable Long id) {
         produkService.deleteProduk(id);
         return ResponseEntity.ok().build();
     }
 
+    @DeleteMapping("/all")
+    public ResponseEntity<?> deleteAll() {
+        produkService.deleteAll();
+        return ResponseEntity.ok().build();
+    }
 }

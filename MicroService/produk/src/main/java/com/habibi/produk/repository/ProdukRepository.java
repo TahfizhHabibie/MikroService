@@ -8,4 +8,5 @@ import com.habibi.produk.model.Produk;
 @Repository
 public interface ProdukRepository extends JpaRepository<Produk, Long>{
 
+    
 }
