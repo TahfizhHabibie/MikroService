@@ -1,0 +1,13 @@
+{
+  "users": [
+    { "name": "ari", "password": "12345", "tags": ["administrator"] },
+    { "name": "habibi", "password": "12345", "tags": ["administrator"] }
+  ],
+  "vhosts": [
+    { "name": "/" }
+  ],
+  "permissions": [
+    { "user": "ari", "vhost": "/", "configure": ".*", "write": ".*", "read": ".*" },
+    { "user": "habibi", "vhost": "/", "configure": ".*", "write": ".*", "read": ".*" }
+  ]
+}
