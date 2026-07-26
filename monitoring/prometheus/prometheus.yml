@@ -1,0 +1,48 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'eureka'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['eureka:8761']
+
+  - job_name: 'gateway-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['gateway-service:9000']
+
+  - job_name: 'authservice'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['authservice:8086']
+
+  - job_name: 'produk'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['produk:8081']
+
+  - job_name: 'pelanggan'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['pelanggan:8082']
+
+  - job_name: 'order'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['order:8083']
+
+  - job_name: 'produser'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['produser:8080']
+
+  - job_name: 'consumer'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['consumer:8085']
+
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
