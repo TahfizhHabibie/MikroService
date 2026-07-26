@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: eureka
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+logging:
+  level:
+    com.netflix.eureka: OFF
+    com.netflix.discovery: OFF
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
